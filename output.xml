@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.11.2 on linux)" generated="2025-09-02T06:39:46.920426" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="/var/jenkins_home/workspace/DockerSeleniumTest/tests">
+<suite id="s1-s1" name="Google Search" source="/var/jenkins_home/workspace/DockerSeleniumTest/tests/google_search.robot">
+<test id="s1-s1-t1" name="Google Search Test" line="8">
+<kw name="Open Browser To Google" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-09-02T06:39:46.997417" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com' through remote server at 'http://selenium-hub:4444/wd/hub'.</msg>
+<arg>https://www.google.com</arg>
+<arg>chrome</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-09-02T06:39:46.997251" elapsed="7.547867"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-09-02T06:39:54.545396" elapsed="0.113087"/>
+</kw>
+<status status="PASS" start="2025-09-02T06:39:46.996879" elapsed="7.661726"/>
+</kw>
+<kw name="Input Search Term" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-02T06:39:54.659543" level="INFO">Typing text 'Robot Framework' into text field 'name=q'.</msg>
+<arg>name=q</arg>
+<arg>${term}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-02T06:39:54.659066" elapsed="0.447454"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-09-02T06:39:55.107026" level="INFO">Sending key(s) ('RETURN',) to name=q element.</msg>
+<msg time="2025-09-02T06:39:55.619818" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2025-09-02T06:39:55.619892" level="INFO">Releasing special key RETURN.</msg>
+<arg>name=q</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-09-02T06:39:55.106699" elapsed="0.559720"/>
+</kw>
+<arg>Robot Framework</arg>
+<status status="PASS" start="2025-09-02T06:39:54.658826" elapsed="1.007682"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-09-02T06:39:55.666603" elapsed="0.106415"/>
+</kw>
+<tag>smoke</tag>
+<status status="PASS" start="2025-09-02T06:39:46.996524" elapsed="8.776627"/>
+</test>
+<status status="PASS" start="2025-09-02T06:39:46.929420" elapsed="8.844050"/>
+</suite>
+<suite id="s1-s2" name="Wikipedia Search" source="/var/jenkins_home/workspace/DockerSeleniumTest/tests/wikipedia_search.robot">
+<test id="s1-s2-t1" name="Wikipedia Arama Testi" line="15">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-09-02T06:39:55.779980" level="INFO">Opening browser 'chrome' to base url 'https://tr.wikipedia.org' through remote server at 'http://selenium-hub:4444/wd/hub'.</msg>
+<arg>${WIKIPEDIA_URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-09-02T06:39:55.779794" elapsed="6.549109"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-09-02T06:40:02.329047" elapsed="0.149266"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>0.2s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-09-02T06:40:02.478466" elapsed="0.000186"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Vikipedi</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-09-02T06:40:02.478708" elapsed="0.393096"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-09-02T06:40:03.395405" level="INFO">Current page contains text 'Özgür Ansiklopedi'.</msg>
+<arg>Özgür Ansiklopedi</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-09-02T06:40:02.871969" elapsed="0.523571"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-02T06:40:03.395928" level="INFO">Typing text 'Robot Framework' into text field 'css:#searchInput'.</msg>
+<arg>${SEARCH_INPUT}</arg>
+<arg>${SEARCH_TERM}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-02T06:40:03.395695" elapsed="0.916330"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-09-02T06:40:04.312423" level="INFO">Clicking button 'xpath://button[text()='Ara']'.</msg>
+<arg>${SEARCH_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-02T06:40:04.312199" elapsed="2.984249"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-09-02T06:40:07.296592" elapsed="0.304347"/>
+</kw>
+<doc>Wikipedia'da Robot Framework kelimesini arar ve sonuçları kontrol eder</doc>
+<tag>search</tag>
+<tag>smoke</tag>
+<tag>wikipedia</tag>
+<status status="PASS" start="2025-09-02T06:39:55.779508" elapsed="11.821731"/>
+</test>
+<status status="PASS" start="2025-09-02T06:39:55.774834" elapsed="11.826797"/>
+</suite>
+<status status="PASS" start="2025-09-02T06:39:46.921350" elapsed="20.680773"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">search</stat>
+<stat pass="2" fail="0" skip="0">smoke</stat>
+<stat pass="1" fail="0" skip="0">wikipedia</stat>
+</tag>
+<suite>
+<stat name="Tests" id="s1" pass="2" fail="0" skip="0">Tests</stat>
+<stat name="Google Search" id="s1-s1" pass="1" fail="0" skip="0">Tests.Google Search</stat>
+<stat name="Wikipedia Search" id="s1-s2" pass="1" fail="0" skip="0">Tests.Wikipedia Search</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
